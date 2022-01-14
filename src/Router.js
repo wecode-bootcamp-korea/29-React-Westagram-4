@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import MainSumin from './pages/Sumin/Main/Main';
 import LoginSumin from './pages/Sumin/Login/Login';
@@ -13,20 +13,19 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/Main" element={<MainSumin />} />
-        <Route path="/Login" element={<LoginSumin />} /> */}
+        <Route path="/sumin" element={<LoginSumin />} />
+        <Route path="/sumin-main" element={<MainSumin />} />
 
-        <Route path="/Hwajong" element={<LoginHwajong />} />
-        {/* <Route path="/Hwajong" element={<MainHwajong />} />
+        <Route path="/hwajong" element={<LoginHwajong />} />
+        <Route path="/hwajong-main" element={<MainHwajong />} />
 
-        <Route path="/Jieun" element={<LoginJieun />} />
-        <Route path="/Jieun" element={<MainJieun />} />
+        <Route path="/jieun" element={<LoginJieun />} />
+        <Route path="/jieun-main" element={<MainJieun />} />
 
-        <Route path="/Pkw" element={<LoginPkw />} />
-        <Route path="/Pkw" element={<MainPkw />} /> */}
+        <Route path="/pkw" element={<LoginPkw />} />
+        <Route path="/pkw-main" element={<MainPkw />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default Router;

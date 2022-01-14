@@ -13,17 +13,17 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Main" element={<MainSumin />} />
-        <Route path="/Login" element={<LoginSumin />} />
+        <Route path="/sumin" element={<LoginSumin />} />
+        <Route path="/sumin-main" element={<MainSumin />} />
 
-        <Route path="/Hwajong" element={<LoginHwajong />} />
-        <Route path="/Hwajong" element={<MainHwajong />} />
+        <Route path="/hwajong" element={<LoginHwajong />} />
+        <Route path="/hwajong-main" element={<MainHwajong />} />
 
-        <Route path="/Jieun" element={<LoginJieun />} />
-        <Route path="/Jieun" element={<MainJieun />} />
+        <Route path="/jieun" element={<LoginJieun />} />
+        <Route path="/jieun-main" element={<MainJieun />} />
 
-        <Route path="/Pkw" element={<LoginPkw />} />
-        <Route path="/Pkw-main" element={<MainPkw />} />
+        <Route path="/pkw" element={<LoginPkw />} />
+        <Route path="/pkw-main" element={<MainPkw />} />
       </Routes>
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 function Login(props) {
   const navigate = useNavigate();
   const goToMain = () => {
-    navigate('/main');
+    navigate('/pkw-main');
   };
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import main from './main.scss';
+import main from './Main.scss';
 import Article from './Article';
 import RightMenu from './RightMenu';
 import Nav from '../../../components/Nav/Nav';

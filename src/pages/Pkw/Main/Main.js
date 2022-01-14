@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import main from './main.scss'
+import Article from "./Article";
+import RightMenu from "./RightMenu";
+import Nav from "./Nav/Nav";
+// import Footer from './Footer';
 
-const Main = () => {
+function Main() {
     return (
-        <div>
-            
+        <div className="main-area">
+            <Nav></Nav>      
+            <main>
+                <Article></Article>
+                <RightMenu></RightMenu>
+            </main>
         </div>
-    )
+    );
 }
 
-export default Main
+export default Main;

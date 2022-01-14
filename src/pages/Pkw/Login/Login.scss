@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+input:focus {
+    outline: none;
+  }
+
 @mixin box_setting {
     width: 100%;
     padding: 13px 16px;

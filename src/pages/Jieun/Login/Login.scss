@@ -1,0 +1,133 @@
+.loginJieun {
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @mixin box-style {
+    border: 1px solid #dcdbdb;
+    background-color: white;
+  }
+
+  $btnOff: #c0dffd;
+
+  $btnOn: #0095f6;
+
+  $textColor: #262626;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #fafafa;
+    font-size: 14px;
+    color: $textColor;
+  }
+
+  input[type='text']::placeholder {
+    color: #8f8f8f;
+  }
+
+  input {
+    color: $textColor;
+  }
+
+  a {
+    text-decoration-line: none;
+    color: inherit;
+  }
+
+  .logo {
+    font-family: 'Lobster', cursive;
+  }
+
+  main {
+    @include flex-center;
+    margin-top: 60px;
+  }
+
+  .loginImg {
+    width: 454px;
+  }
+
+  main {
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 40px;
+    margin: 0px 0px 40px 0px;
+  }
+
+  .loginBox,
+  .joinBox {
+    @include box-style;
+  }
+
+  .loginBox {
+    @include flex-center;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 350px;
+    height: 380px;
+  }
+
+  input {
+    background-color: #fafafa;
+    border: 1px solid #dcdbdb;
+    border-radius: 2px;
+    width: 268px;
+    height: 36px;
+    padding: 9px 0px 7px 8px;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid #a8a8a8;
+  }
+
+  .loginBtn {
+    width: 268px;
+    height: 30px;
+    background-color: $btnOff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+
+  .findPassword {
+    margin-top: 14px;
+    font-size: 11px;
+    color: #02366b;
+  }
+
+  .joinBox {
+    margin-top: 10px;
+    width: 350px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8e8e8e;
+  }
+
+  .join {
+    font-weight: bold;
+    color: $btnOn;
+  }
+
+  .dowload {
+    margin: 20px 0px 20px 0px;
+  }
+
+  .appStore,
+  .googlePlay {
+    width: 136px;
+    margin: 0px 2px 0px 2px;
+  }
+}

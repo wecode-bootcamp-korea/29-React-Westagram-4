@@ -15,12 +15,11 @@ import MainHwajong from './pages/Hwajong/Main/Main';
 function Router() {
   return (
     <BrowserRouter>
-      <Nav />
       {/* <Route path="/sumin" element={<LoginSumin />} />
         <Route path="/sumin-main" element={<MainSumin />} /> */}
       <Routes>
         <Route path="/hwajong" element={<LoginHwajong />} />
-        {/* <Route path="/hwajong-main" element={<MainHwajong />} /> */}
+        <Route path="/hwajong-main" element={<MainHwajong />} />
 
         {/* <Route path="/jieun" element={<LoginJieun />} />
         <Route path="/jieun-main" element={<MainJieun />} /> */}

@@ -7,6 +7,7 @@ function TextContent() {
         <img
           className="profile-img-s"
           id=""
+          alt="profile_image"
           src="/images/Pkw/profile-img5.png"
         />
         <span className="ids" id="">

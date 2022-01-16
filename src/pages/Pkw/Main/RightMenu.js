@@ -1,5 +1,5 @@
 import React from 'react';
-import rightmenu from './rightmenu.scss';
+import './rightmenu.scss';
 
 function RightMenu() {
   return (
@@ -8,6 +8,7 @@ function RightMenu() {
         <img
           className="profile-img-l"
           id="mine"
+          alt="profile_image"
           src="/images/Pkw/profile-img.png"
         />
         <div className="id-area">
@@ -24,6 +25,7 @@ function RightMenu() {
           <img
             className="profile-img-m"
             id=""
+            alt="profile_image"
             src="/images/Pkw/profile-img4.png"
           />
           <div className="story-info" id="story-01">
@@ -40,6 +42,7 @@ function RightMenu() {
           <img
             className="profile-img-m"
             id=""
+            alt="profile_image"
             src="/images/Pkw/profile-img6.png"
           />
           <div className="story-info" id="story-01">
@@ -62,6 +65,7 @@ function RightMenu() {
           <img
             className="profile-img-m"
             id=""
+            alt="profile_image"
             src="/images/Pkw/profile-img3.png"
           />
           <div className="recommend-info" id="recommend-01">
@@ -80,6 +84,7 @@ function RightMenu() {
           <img
             className="profile-img-m"
             id=""
+            alt="profile_image"
             src="/images/Pkw/profile-img7.png"
           />
           <div className="recommend-info" id="recommend-01">

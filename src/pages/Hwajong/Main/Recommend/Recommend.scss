@@ -1,0 +1,46 @@
+.main-right__recommend {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  border: 1px solid lightgray;
+  padding: 9px;
+  width: 280px;
+  background-color: white;
+}
+
+.recommend__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommend__smallTitle {
+  color: rgb(175, 175, 175);
+}
+
+.recommend__list {
+  display: flex;
+}
+
+.recommend__list__img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.recommend__list__allInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommend__list__status__followerDigit {
+  color: rgb(175, 175, 175);
+  font-size: 13px;
+}
+
+.recommend__following button {
+  margin-top: 10px;
+  border: none;
+  color: #3b99ef;
+  font-size: 15px;
+  background-color: white;
+}

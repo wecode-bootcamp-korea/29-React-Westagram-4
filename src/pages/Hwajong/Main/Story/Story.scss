@@ -1,0 +1,39 @@
+.main-right__friendsStory {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(240, 240, 240);
+  padding: 9px;
+  height: 250px;
+  background-color: white;
+}
+
+.main-right__friendsStory__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.friendsStory__title__story {
+  color: rgb(175, 175, 175);
+}
+
+.main-right__friendsStory__list {
+  display: flex;
+  flex-direction: column;
+  margin: 9px 0;
+}
+.friendsStory__list__allInfo {
+  display: flex;
+  margin-bottom: 9px;
+}
+
+.friendsStory__list__img img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.friendsStory__list__status__time {
+  color: rgb(175, 175, 175);
+  font-size: 13px;
+}

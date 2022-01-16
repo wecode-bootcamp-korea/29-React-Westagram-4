@@ -20,13 +20,12 @@ function Router() {
       <Routes>
         <Route path="/hwajong" element={<LoginHwajong />} />
         <Route path="/hwajong-main" element={<MainHwajong />} />
-
-        {/* <Route path="/jieun" element={<LoginJieun />} />
+      </Routes>
+      {/* <Route path="/jieun" element={<LoginJieun />} />
         <Route path="/jieun-main" element={<MainJieun />} /> */}
 
-        {/* <Route path="/pkw" element={<LoginPkw />} />
+      {/* <Route path="/pkw" element={<LoginPkw />} />
         <Route path="/pkw-main" element={<MainPkw />} /> */}
-      </Routes>
     </BrowserRouter>
   );
 }

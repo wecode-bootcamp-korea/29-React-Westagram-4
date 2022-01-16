@@ -1,8 +1,21 @@
-import React from 'react';
-import login from './Login.scss';
+import React, { useState } from 'react';
+import './login.scss';
 import { useNavigate, Link } from 'react-router-dom';
 
 function Login(props) {
+  const [userID, setUserID] = useState('');
+  const [userPW, setUserPW] = useState('');
+
+  const getID = e => {
+    console.log(e);
+    setUserID(e.target.value);
+  };
+
+  const getPW = e => {
+    console.log(e);
+    setUserPW(e.target.value);
+  };
+
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/pkw-main');
@@ -15,12 +28,14 @@ function Login(props) {
         <input
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
-          // value={props.id}
+          value={userID}
+          onChange={getID}
         />
         <input
           type="password"
           placeholder="비밀번호"
-          // value={props.pw}
+          value={userPW}
+          onChange={getPW}
         />
         <button onClick={goToMain}>로그인</button>
       </div>

@@ -1,0 +1,75 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.main-area {
+  display: flex;
+  margin: auto;
+  background-color: #fafafa;
+}
+
+nav {
+  @include flex-center();
+  position: fixed;
+  justify-content: space-between;
+  padding: 20px 60px;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: #ffffff;
+}
+
+.nav-left {
+  @include flex-center();
+}
+
+#logo-img {
+  width: 45px;
+  border-right: 2px solid #000000;
+  padding-right: 10px;
+  margin-right: 13px;
+}
+
+.site-logo {
+  width: 100%;
+  margin: 0px 0px 5px 0px;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  color: #000000;    
+}
+
+.nav-center {
+  width: 200px;
+  @include flex-center();
+}
+
+#search-box {
+  margin: 0px;
+  padding: 3px 25px;
+  border: 1.5px solid #dbdbdb;
+  border-radius: 2px;
+  background-color: #fafafa;
+
+  &::placeholder {
+      text-align: center;
+  }
+}
+
+
+#magnifier {
+  width: 10px;
+  margin-top: 1px;
+  margin-left: -125px;
+}
+
+.icon {
+  width: 30px;
+}
+
+.nav-right {
+  @include flex-center();
+  .icon {
+      margin-right: 10px;
+  }
+}

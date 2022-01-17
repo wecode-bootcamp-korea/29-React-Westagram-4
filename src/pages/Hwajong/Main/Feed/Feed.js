@@ -53,8 +53,8 @@ const Feed = () => {
             <div className="feed-comment__like">
               <img
                 className="friends-img"
-                src="./images/hwajong_1.jpg"
-                alt="friendPicture"
+                src="./images/Hwajong/hwajong_1.jpg"
+                alt="friends-picture"
               />
               <p className="like-notice">
                 <strong>zerrdin</strong>님 외에 <strong>10명</strong>이

@@ -15,7 +15,6 @@ function Main() {
       <main>
         <div className="main-content">
           <Feed />
-
           <div className="main-right">
             <UserInfo />
             <Story />

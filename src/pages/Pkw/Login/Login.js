@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
-import './login.scss';
+import './Login.scss';
 import { useNavigate, Link } from 'react-router-dom';
 
 function Login(props) {
@@ -59,12 +58,5 @@ function Login(props) {
     </div>
   );
 }
-=======
-import React from 'react';
-
-const Login = () => {
-  return <div />;
-};
->>>>>>> 5ed7e2b72585cd337d0da7d34095de7bbaa7ab02
 
 export default Login;

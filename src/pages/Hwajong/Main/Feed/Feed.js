@@ -1,19 +1,63 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Feed.scss';
 
 const Feed = () => {
-  const [reviewId, setReviewId] = useState('crisis12');
-  const [reviewContentValue, setReviewContentValue] = useState('');
+  // const [reviewId, setReviewId] = useState('crisis12');
+  // const [reviewContentValue, setReviewContentValue] = useState('');
 
-  const [postContent, setPostContent] = useState([]);
+  const [postContent, setPostContent] = useState(['']);
 
-  const pictureReview = event => {
-    event.preventDefault();
-    const copyArr = [...postContent];
-    copyArr.push(reviewContentValue);
-    setPostContent(copyArr);
-    setReviewContentValue('');
+  const [input, setInput] = useState('');
+  const inputRef = useRef();
+
+  const onKeyPress = e => {
+    const content = e.target.value;
+    if (e.key === 'Enter') {
+      setPostContent([
+        ...postContent,
+        {
+          id: 1,
+          userName: 'wecode',
+          content: content,
+          isLiked: true,
+        },
+      ]);
+      inputRef.current.value = '';
+    }
   };
+
+  const onChange = e => {
+    setInput(e.target.value);
+  };
+
+  const onClick = () => {
+    setPostContent([
+      ...postContent,
+      {
+        id: 1,
+        userName: 'wecode',
+        content: input,
+        isLiked: true,
+      },
+    ]);
+    inputRef.current.value = '';
+  };
+
+  // const pictureReview = event => {
+  //   event.preventDefault();
+  //   const copyArr = [...postContent,];
+  //   copyArr.push(reviewContentValue);
+  //   setPostContent(copyArr);
+  //   setReviewContentValue('');
+  // };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json')
+      .then(res => res.json())
+      .then(data => {
+        setPostContent(data);
+      });
+  }, []);
 
   return (
     <div>
@@ -40,7 +84,7 @@ const Feed = () => {
         </div>
         <div className="feed-reaction">
           <div className="feed-reaction__icons">
-            <div className="">
+            <div>
               <i className="fas fa-heart" />
               <i className="far fa-comment" />
               <i className="fas fa-upload" />
@@ -80,8 +124,14 @@ const Feed = () => {
                 <i className="far fa-heart" />
               </div>
             </div>
-            {postContent.map((item, i) => {
-              return <HwajongReview reviewId={reviewId} item={item} key={i} />;
+            {postContent.map((comment, i) => {
+              return (
+                <HwajongReview
+                  key={comment.id}
+                  name={comment.userName}
+                  content={comment.content}
+                />
+              );
             })}
             <div className="friends-comment__times">
               <p>42분전에</p>
@@ -93,11 +143,11 @@ const Feed = () => {
             className="feed-comment__content"
             type="text"
             placeholder="댓글달기"
-            onChange={event => {
-              setReviewContentValue(event.target.value);
-            }}
+            onKeyPress={onKeyPress}
+            onChange={onChange}
+            ref={inputRef}
           />
-          <button className="feed-comment__button" onClick={pictureReview}>
+          <button className="feed-comment__button" onClick={onClick}>
             게시
           </button>
         </div>
@@ -106,14 +156,14 @@ const Feed = () => {
   );
 };
 
-const HwajongReview = props => {
+const HwajongReview = ({ name, content }) => {
   return (
     <div className="friends-comment">
       <div className="friends-comment__info">
         <span className="friends-comment__friend-id">
-          <strong>{props.reviewId}</strong>
+          <strong>{name}</strong>
         </span>
-        <span className="friends-comment__friend-comment">{props.item}</span>
+        <span className="friends-comment__friend-comment">{content}</span>
       </div>
     </div>
   );

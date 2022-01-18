@@ -1,3 +1,5 @@
+$color: #afafaf;
+
 .main-right__recommend {
   display: flex;
   flex-direction: column;
@@ -14,33 +16,36 @@
 }
 
 .recommend__smallTitle {
-  color: rgb(175, 175, 175);
+  color: $color;
 }
 
 .recommend__list {
   display: flex;
 }
 
-.recommend__list__img img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.recommend__list__img {
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
 }
-
 .recommend__list__allInfo {
   display: flex;
   justify-content: space-between;
 }
 
 .recommend__list__status__followerDigit {
-  color: rgb(175, 175, 175);
+  color: $color;
   font-size: 13px;
 }
 
-.recommend__following button {
-  margin-top: 10px;
-  border: none;
-  color: #3b99ef;
-  font-size: 15px;
-  background-color: white;
+.recommend__following {
+  button {
+    margin-top: 10px;
+    border: none;
+    color: #3b99ef;
+    font-size: 15px;
+    background-color: white;
+  }
 }

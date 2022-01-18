@@ -1,6 +1,10 @@
 import React from 'react';
+import Comment from './Comment';
 
-function TextContent() {
+function TextContent({ comments }) {
+  const commentList = comments.map((comment, idx) => (
+    <Comment key={idx} comment={comment} />
+  ));
   return (
     <div className="text-contents">
       <div className="liked-people">
@@ -21,14 +25,15 @@ function TextContent() {
         <span className="ids" id="id-mine">
           pkw.may
         </span>
-        <span className="post-preview">post-preview</span>
+        <span className="post-preview">술 줭</span>
       </div>
       <div className="text-comments">
         <span className="ids" id="">
           hanjanjusio
         </span>
-        <span className="comment-preview">comment-preview</span>
+        <span className="comment-preview">돈 줭</span>
       </div>
+      {commentList}
       <div className="posted-time">
         <span className="time" id="posted-time-01">
           posted-time

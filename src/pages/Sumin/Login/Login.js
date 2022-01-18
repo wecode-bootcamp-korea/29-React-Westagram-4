@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
+  const [id, setId] = useState(''); //eslint-disable-ine no-unused-vars
+  const [pw, setPw] = useState(''); //eslint-disable-ine no-unused-vars
+
+  const handleIdInput = event => {
+    setId(event.target.value);
+    console.log(event.target.value);
+  };
+
+  const handlePwInput = event => {
+    setPw(event.target.value);
+    console.log(event.target.value);
+  };
+
   const navigate = useNavigate();
   const goToMain = () => {
-    navigate('/Main');
+    navigate('/Sumin-main');
   };
 
   return (
@@ -17,11 +30,13 @@ const Login = () => {
             className="id input-style"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            onChange={handleIdInput}
           />
           <input
             className="pw input-style"
             type="password"
             placeholder="비밀번호"
+            onChange={handlePwInput}
           />
           <button onClick={goToMain}>로그인</button>
         </form>

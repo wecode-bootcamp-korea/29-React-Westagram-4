@@ -1,34 +1,11 @@
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 import './Main.scss';
 
 function Main() {
   return (
     <div>
-      <nav>
-        <div className="nav-box">
-          <div className="logo-box">
-            <img className="logo-img" src="images/Sumin/instagram.png" />
-            <div className="main-logo">westagram</div>
-          </div>
-          <div className="search-box">
-            <input className="search" type="text" placeholder="검색" />
-          </div>
-          <div className="nav-icon">
-            <img
-              className="nav-img"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-            />
-            <img
-              className="nav-img"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-            />
-            <img
-              className="nav-img"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-            />
-          </div>
-        </div>
-      </nav>
+      <Nav />
       <main>
         <div className="feeds">
           <article>

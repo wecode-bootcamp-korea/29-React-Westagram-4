@@ -119,9 +119,9 @@ article {
                 font-weight: bold;
             }
         }
-        
-        .text-comments {
-            width: auto;
+
+        .text-post, .text-comments {
+            padding-bottom: 5px;
         }
 
         .post-preview, .comment-preview {

@@ -10,14 +10,6 @@ function Login() {
   const [pw, setPw] = useState('');
   const [loginBtn, setLoginBtn] = useState(false);
 
-  function handleIdInput(e) {
-    setId(e.target.value);
-  }
-
-  function handlePwInput(e) {
-    setPw(e.target.value);
-  }
-
   const loginBtnChange = () => {
     return id.includes('@') && pw.length > 4
       ? setLoginBtn(true)
@@ -44,14 +36,14 @@ function Login() {
               className="id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={e => handleIdInput(e)}
+              onChange={e => setId(e.target.value)}
               onKeyUp={loginBtnChange}
             />
             <input
               className="pw"
               type="password"
               placeholder="비밀번호"
-              onChange={e => handlePwInput(e)}
+              onChange={e => setPw(e.target.value)}
               onKeyUp={loginBtnChange}
             />
             <div className="login">

@@ -24,8 +24,7 @@
   $btnOff: #c0dffd;
   $btnOn: #0095f6;
   $textColor: #262626;
-  @include flex-center;
-  background-color: #fafafa;
+  // background-color: #fafafa;
   font-size: 14px;
   color: $textColor;
 
@@ -50,15 +49,12 @@
 
   main {
     @include flex-center;
-    margin-top: 60px;
+    padding-top: 60px;
+    text-align: center;
   }
 
   .loginImg {
     width: 454px;
-  }
-
-  main {
-    text-align: center;
   }
 
   .loginBox,

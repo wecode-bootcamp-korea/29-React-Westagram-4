@@ -28,7 +28,6 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
   
-
 .main-area {
     display: flex;
     margin: auto;
@@ -102,6 +101,7 @@ article {
     }
 
     .text-contents {
+        width: 550px;
         display: flex;
         flex-direction: column;
         padding: 0px 15px 15px 15px;
@@ -119,11 +119,15 @@ article {
                 font-weight: bold;
             }
         }
+        
+        .text-comments {
+            width: auto;
+        }
 
         .post-preview, .comment-preview {
             padding-left: 7px;
         }
-    
+
         .posted-time {
             @include flex-center();
             flex-direction: row;
@@ -134,6 +138,7 @@ article {
     }
 
     .write-comment {
+        width: 550px;
         @include flex-center();
         justify-content: space-between;
         padding: 10px;
@@ -141,7 +146,7 @@ article {
     
         input {
             width: 100%;
-            padding: 5px;
+            padding: 5px 45px 5px 5px;
             margin: 0px;
             border: none;
             background-color: #ffffff;
@@ -157,6 +162,7 @@ article {
             white-space: nowrap;
             color: #3e99ed;
             opacity: 40%;
+        
         }
     }
 }

@@ -9,9 +9,9 @@ function Main() {
   return (
     <>
       <Nav />
-      <div class="sumin-main">
+      <div className="sumin-main">
         <main>
-          <div class="feeds">
+          <div className="feeds">
             <article>
               <Feed />
               <Comments />

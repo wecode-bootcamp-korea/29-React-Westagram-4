@@ -5,30 +5,26 @@ import './Login.scss';
 const Login = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
-  const [isLoginBtn, setisLoginBtn] = useState(false);
+  const [isLoginBtn, setIsLoginBtn] = useState(false);
 
   const handleIdInput = event => {
     setId(event.target.value);
-    console.log(event.target.value);
   };
 
   const handlePwInput = event => {
     setPw(event.target.value);
-    console.log(event.target.value);
   };
 
   const loginBtnValidation = () => {
     return id.includes('@') && pw.length > 4
-      ? setisLoginBtn(true)
-      : setisLoginBtn(false);
+      ? setIsLoginBtn(true)
+      : setIsLoginBtn(false);
   };
 
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/Sumin-main');
   };
-
-  console.log(isLoginBtn);
 
   return (
     <section>
@@ -50,7 +46,6 @@ const Login = () => {
             onKeyUp={loginBtnValidation}
           />
           <button
-            type="button"
             className={isLoginBtn ? 'BtnOn' : 'BtnOff'}
             disabled={!isLoginBtn}
             onClick={goToMain}

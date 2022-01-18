@@ -3,96 +3,115 @@ import './Main.scss';
 
 function MainRight() {
   return (
-    <div class="main-right">
-      <div class="my-profile">
-        <div class="my-box">
-          <img class="my-image" src="images/Sumin/feed_profile.jpg" />
-          <div class="my-info">
-            <div class="my-id">yak_oruji__</div>
-            <div class="my-name">오수민</div>
+    <div className="main-right">
+      <div className="my-profile">
+        <div className="my-box">
+          <img
+            className="my-image"
+            alt="feed img"
+            src="images/Sumin/feed_profile.jpg"
+          />
+          <div className="my-info">
+            <div className="my-id">yak_oruji__</div>
+            <div className="my-name">오수민</div>
           </div>
         </div>
-        <div class="change-id">전환</div>
+        <div className="change-id">전환</div>
       </div>
-      <div class="recommand">
-        <div class="reco-top">
-          <div class="top-one">스토리</div>
-          <div class="top-two">모두 보기</div>
+      <div className="recommand">
+        <div className="reco-top">
+          <div className="top-one">스토리</div>
+          <div className="top-two">모두 보기</div>
         </div>
-        <div class="recommand-box">
-          <div class="info-box">
-            <div class="reco-info">
+        <div className="recommand-box">
+          <div className="info-box">
+            <div className="reco-info">
               <img
-                class="friend-img ring"
+                className="friend-img ring"
+                alt="profile img"
                 src="images/Sumin/feed_profile.jpg"
               />
-              <div class="friend-info">
-                <div class="friend-id">yak_oruji__</div>
-                <div class="how-many">16분전</div>
+              <div className="friend-info">
+                <div className="friend-id">yak_oruji__</div>
+                <div className="how-many">16분전</div>
               </div>
             </div>
           </div>
-          <div class="info-box">
-            <div class="reco-info">
+          <div className="info-box">
+            <div className="reco-info">
               <img
-                class="friend-img ring"
+                className="friend-img ring"
+                alt="profile img"
                 src="images/Sumin/feed_profile.jpg"
               />
-              <div class="friend-info">
-                <div class="friend-id">yak_oruji__</div>
-                <div class="how-many">2시간전</div>
+              <div className="friend-info">
+                <div className="friend-id">yak_oruji__</div>
+                <div className="how-many">2시간전</div>
               </div>
             </div>
           </div>
-          <div class="info-box">
-            <div class="reco-info">
+          <div className="info-box">
+            <div className="reco-info">
               <img
-                class="friend-img ring"
+                className="friend-img ring"
+                alt="profile img"
                 src="images/Sumin/feed_profile.jpg"
               />
-              <div class="friend-info">
-                <div class="friend-id">yak_oruji__</div>
-                <div class="how-many">30초전</div>
+              <div className="friend-info">
+                <div className="friend-id">yak_oruji__</div>
+                <div className="how-many">30초전</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="recommand">
-        <div class="reco-top">
-          <div class="top-one">회원님을 위한 추천</div>
-          <div class="top-two">모두 보기</div>
+      <div className="recommand">
+        <div className="reco-top">
+          <div className="top-one">회원님을 위한 추천</div>
+          <div className="top-two">모두 보기</div>
         </div>
-        <div class="recommand-box">
-          <div class="info-box">
-            <div class="reco-info">
-              <img class="friend-img" src="images/Sumin/feed_profile.jpg" />
-              <div class="friend-info">
-                <div class="friend-id">yak_oruji__</div>
-                <div class="how-many">우와웅</div>
+        <div className="recommand-box">
+          <div className="info-box">
+            <div className="reco-info">
+              <img
+                className="friend-img"
+                alt="profile img"
+                src="images/Sumin/feed_profile.jpg"
+              />
+              <div className="friend-info">
+                <div className="friend-id">yak_oruji__</div>
+                <div className="how-many">우와웅</div>
               </div>
             </div>
-            <div class="follow">팔로우</div>
+            <div className="follow">팔로우</div>
           </div>
-          <div class="info-box">
-            <div class="reco-info">
-              <img class="friend-img" src="images/Sumin/feed_profile.jpg" />
-              <div class="friend-info">
-                <div class="friend-id">yak_oruji__</div>
-                <div class="how-many">우와웅</div>
+          <div className="info-box">
+            <div className="reco-info">
+              <img
+                className="friend-img"
+                alt="profile img"
+                src="images/Sumin/feed_profile.jpg"
+              />
+              <div className="friend-info">
+                <div className="friend-id">yak_oruji__</div>
+                <div className="how-many">우와웅</div>
               </div>
             </div>
-            <div class="follow">팔로우</div>
+            <div className="follow">팔로우</div>
           </div>
-          <div class="info-box">
-            <div class="reco-info">
-              <img class="friend-img" src="images/Sumin/feed_profile.jpg" />
-              <div class="friend-info">
-                <div class="friend-id">yak_oruji__</div>
-                <div class="how-many">우와웅</div>
+          <div className="info-box">
+            <div className="reco-info">
+              <img
+                className="friend-img"
+                alt="profile img"
+                src="images/Sumin/feed_profile.jpg"
+              />
+              <div className="friend-info">
+                <div className="friend-id">yak_oruji__</div>
+                <div className="how-many">우와웅</div>
               </div>
             </div>
-            <div class="follow">팔로우</div>
+            <div className="follow">팔로우</div>
           </div>
         </div>
       </div>

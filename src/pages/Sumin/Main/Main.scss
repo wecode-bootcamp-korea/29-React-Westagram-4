@@ -59,7 +59,12 @@ main {
   width: 935px;
   display: flex;
   justify-content: space-between;
-  margin-top: 76px;
+}
+
+.fix-nav {
+  margin-top: 85px;
+  width: 935;
+  display: flex;
 }
 
 .feeds {

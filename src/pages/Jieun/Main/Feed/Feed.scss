@@ -1,0 +1,147 @@
+.feedJieun {
+  $borderStyle: 1px solid #dcdbdb;
+
+  @mixin theme($theme: ProfileImg) {
+    object-fit: cover;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @mixin item-center {
+    display: flex;
+    align-items: center;
+  }
+
+  @mixin btnDefault {
+    border: none;
+    background-color: transparent;
+  }
+
+  $btnOff: #c0dffd;
+
+  $btnOn: #0095f6;
+
+  background-color: white;
+  border: $borderStyle;
+  margin-bottom: 25px;
+
+  .profileImg {
+    @include theme($theme: ProfileImg);
+  }
+
+  a,
+  .like,
+  button {
+    font-weight: bold;
+  }
+
+  .feedImg {
+    width: 614px;
+    object-fit: cover;
+  }
+
+  .feedHeader {
+    width: 614px;
+    height: 60px;
+    padding: 14px 4px 14px 16px;
+    @include item-center;
+  }
+
+  .feedUser {
+    width: 560px;
+    @include item-center;
+  }
+
+  .feedProfileId {
+    margin-left: 14px;
+  }
+
+  article {
+    width: 614px;
+    height: 614px;
+  }
+
+  .feedPostIcon {
+    width: 614px;
+    height: 54px;
+    @include item-center;
+  }
+
+  .feedIcon,
+  .commentIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .feedIcon {
+    margin-left: 16px;
+  }
+
+  .feedIcon:nth-child(4) {
+    margin-left: 450px;
+  }
+
+  .post {
+    width: 614px;
+    margin: 6px 0px 20px 0px;
+    padding: 0px 0px 0px 16px;
+  }
+
+  .content {
+    margin-top: 12px;
+  }
+
+  .id {
+    margin-right: 4px;
+  }
+
+  .commentMore,
+  .time {
+    color: #8e8e8e;
+  }
+
+  .commentMore {
+    font-weight: normal;
+    margin-top: 8px;
+  }
+
+  .commentMsg,
+  .newComment {
+    margin-top: 8px;
+  }
+
+  .time {
+    font-size: 10px;
+    margin-top: 12px;
+  }
+
+  .commentBox {
+    border-top: $borderStyle;
+    width: 582x;
+    height: 53px;
+    padding: 6px 16px 6px 16px;
+    @include item-center;
+    justify-content: space-between;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .comment {
+    margin-left: 12px;
+    border: none;
+    width: 500px;
+    height: 17px;
+  }
+
+  .commentOn {
+    @include btnDefault;
+    color: $btnOn;
+  }
+
+  .commentOff {
+    @include btnDefault;
+    color: $btnOff;
+  }
+}

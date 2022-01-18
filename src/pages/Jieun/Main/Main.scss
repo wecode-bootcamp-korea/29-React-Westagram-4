@@ -1,0 +1,33 @@
+.mainJieun {
+  $textColor: #262626;
+  background-color: #fafafa;
+  font-size: 14px;
+  color: $textColor;
+
+  input[type='text']::placeholder {
+    color: #8f8f8f;
+  }
+
+  input {
+    color: $textColor;
+  }
+
+  a {
+    text-decoration-line: none;
+    color: inherit;
+  }
+
+  display: flex;
+
+  .section {
+    width: 935px;
+    margin: 105px auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  .feeds {
+    flex-direction: column;
+  }
+}

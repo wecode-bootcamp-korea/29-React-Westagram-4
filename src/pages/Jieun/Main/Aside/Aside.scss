@@ -1,0 +1,88 @@
+.asideJieun {
+  @mixin theme($theme: ProfileImg) {
+    object-fit: cover;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @mixin item-center {
+    display: flex;
+    align-items: center;
+  }
+
+  margin-top: 22px;
+  width: 293px;
+  position: fixed;
+  right: 396px;
+
+  .info {
+    display: flex;
+  }
+
+  .for,
+  .name,
+  .relationship {
+    color: #8e8e8e;
+  }
+
+  .recommend {
+    margin-top: 20px;
+  }
+
+  .recommendItem {
+    margin-top: 14px;
+    @include item-center;
+  }
+
+  .recommendImg {
+    margin-right: 12px;
+  }
+
+  .profileImg {
+    @include theme($theme: ProfileImg);
+  }
+
+  a,
+  .for {
+    font-weight: bold;
+  }
+
+  .profile {
+    @include item-center;
+  }
+
+  .rightProfileImg {
+    margin-right: 12px;
+  }
+
+  .name {
+    margin-top: 4px;
+  }
+
+  .user {
+    width: 190px;
+  }
+
+  .item {
+    width: 205px;
+  }
+
+  .relationship {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .fontSmall {
+    font-size: 12px;
+    color: #0095f6;
+  }
+
+  .recommendItem {
+    @include item-center;
+    margin-top: 12px;
+  }
+
+  .recommendImg {
+    margin-right: 12px;
+  }
+}

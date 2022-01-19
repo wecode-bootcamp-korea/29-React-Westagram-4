@@ -9,6 +9,7 @@ function Main() {
   return (
     <>
       <Nav />
+      <div className="navv"></div>
       <div className="sumin-main">
         <main>
           <div className="feeds">

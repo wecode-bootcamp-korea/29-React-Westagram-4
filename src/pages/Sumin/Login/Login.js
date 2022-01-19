@@ -5,7 +5,7 @@ import './Login.scss';
 const Login = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
-  const [isLoginBtn, setIsLoginBtn] = useState(false);
+  const [isLoginBtn, setisLoginBtn] = useState(false);
 
   const handleIdInput = event => {
     setId(event.target.value);
@@ -17,8 +17,8 @@ const Login = () => {
 
   const loginBtnValidation = () => {
     return id.includes('@') && pw.length > 4
-      ? setIsLoginBtn(true)
-      : setIsLoginBtn(false);
+      ? setisLoginBtn(true)
+      : setisLoginBtn(false);
   };
 
   const navigate = useNavigate();
@@ -46,6 +46,7 @@ const Login = () => {
             onKeyUp={loginBtnValidation}
           />
           <button
+            type="button"
             className={isLoginBtn ? 'BtnOn' : 'BtnOff'}
             disabled={!isLoginBtn}
             onClick={goToMain}

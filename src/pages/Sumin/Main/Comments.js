@@ -1,37 +1,33 @@
 import React, { useState } from 'react';
 import './Main.scss';
-import InputComments from '../../Sumin/Main/InputComments';
 
 function Comments() {
   const [comment, setComment] = useState('');
   const [isUploadBtn, setIsUploadBtn] = useState(false);
+  const [commentArray, seCommentArray] = useState([]);
 
   const handleCommentInput = event => {
     setComment(event.target.value);
-  };
-
-  const upLoadBtnValidation = () => {
     return comment.length > 0 ? setIsUploadBtn(true) : setIsUploadBtn(false);
   };
 
   function uploadComment(event) {
     event.preventDefault();
+    console.log('clicked');
   }
 
-  //console.log(isUploadBtn);
+  console.log(comment);
 
   return (
     <div className="feed-comment">
-      <ul className="comment-box">
-        <InputComments userInput={comment} />
-      </ul>
+      <ul className="comment-box"></ul>
       <form className="reply">
         <input
           className="reply-input"
           type="text"
           placeholder="댓글 달기..."
           onChange={handleCommentInput}
-          onKeyUp={upLoadBtnValidation}
+          onKeyUp={handleCommentInput}
         />
         <button
           className={isUploadBtn ? 'btn-change' : 'reply-btn'}

@@ -36,7 +36,6 @@ function Article() {
           receiveEnter={receiveEnter}
           addComment={addComment}
           handleComment={handleComment}
-          comment={comments}
         />
       </article>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './Feed.scss';
 
-function Feed(props) {
+function Feed() {
   const [commentBtn, setCommentBtn] = useState(false);
   const [input, setInput] = useState('');
   const [comment, setComment] = useState([]);
@@ -22,6 +22,7 @@ function Feed(props) {
   const CommentBtnChange = () => {
     return input.length >= 1 ? setCommentBtn(true) : setCommentBtn(false);
   };
+
   return (
     <div className="feedJieun">
       <div className="feedHeader">
@@ -73,22 +74,9 @@ function Feed(props) {
           <p className="commentMore">댓글 15,458개 모두 보기</p>
         </a>
         <div className="commentDiv">
-          <div className="commentMsg">
-            <a className="id" href="/">
-              dog
-            </a>
-            <span>멍멍</span>
-            {comment.map(function (글) {
-              return (
-                <div className="newComment">
-                  <a className="id" href="/">
-                    dog
-                  </a>
-                  <span>{글}</span>
-                </div>
-              );
-            })}
-          </div>
+          {comment.map(function (item, i) {
+            return <AddComment id="dog" item={item} key={i} />;
+          })}
         </div>
         <p className="time">3일 전</p>
       </div>
@@ -107,12 +95,23 @@ function Feed(props) {
           }}
         />
         <button
-          class={commentBtn ? 'commentOn' : 'commentOff'}
+          className={commentBtn ? 'commentOn' : 'commentOff'}
           onClick={btnClick}
         >
           게시
         </button>
       </div>
+    </div>
+  );
+}
+
+function AddComment(props) {
+  return (
+    <div className="commentMsg">
+      <a className="id" href="/">
+        {props.id}
+      </a>
+      <span>{props.item}</span>
     </div>
   );
 }

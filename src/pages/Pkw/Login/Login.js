@@ -2,31 +2,30 @@ import React, { useState } from 'react';
 import './Login.scss';
 import { useNavigate, Link } from 'react-router-dom';
 
-function Login(props) {
+function Login() {
   const [userID, setUserID] = useState('');
   const [userPW, setUserPW] = useState('');
   const [validData, setValidData] = useState(false);
 
   const getID = e => {
-    console.log(e);
     setUserID(e.target.value);
   };
 
   const getPW = e => {
-    console.log(e);
     setUserPW(e.target.value);
-    if (userID.includes('@') && userPW.length >= 5) {
-      setValidData(!validData);
-      console.log('done!');
+  };
+
+  const validateData = () => {
+    if (userID.includes('@') && userPW.length > 4) {
+      setValidData(true);
+    } else {
+      setValidData(false);
     }
   };
 
   const navigate = useNavigate();
   const goToMain = () => {
-    navigate('/pkw-main');
-  };
-  const stay = () => {
-    navigate('');
+    validData ? navigate('/pkw-main') : alert('잘못된 정보입니다.');
   };
 
   return (
@@ -38,17 +37,16 @@ function Login(props) {
           placeholder="전화번호, 사용자 이름 또는 이메일"
           value={userID}
           onChange={getID}
+          onKeyUp={validateData}
         />
         <input
           type="password"
           placeholder="비밀번호"
           value={userPW}
           onChange={getPW}
+          onKeyUp={validateData}
         />
-        <button
-          onClick={validData ? goToMain : stay}
-          style={{ opacity: validData ? 1 : 0.3 }}
-        >
+        <button onClick={goToMain} style={{ opacity: validData ? 1 : 0.3 }}>
           로그인
         </button>
       </div>

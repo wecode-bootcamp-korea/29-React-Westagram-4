@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Feed.scss';
 
 function Feed() {
   const [commentBtn, setCommentBtn] = useState(false);
   const [input, setInput] = useState('');
   const [comment, setComment] = useState([]);
+  const [commentList, setCommentList] = useState([]);
 
   const btnClick = () => {
     let copyArr = [...comment];
@@ -22,6 +23,16 @@ function Feed() {
   const CommentBtnChange = () => {
     return input.length >= 1 ? setCommentBtn(true) : setCommentBtn(false);
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
 
   return (
     <div className="feedJieun">
@@ -74,8 +85,18 @@ function Feed() {
           <p className="commentMore">댓글 15,458개 모두 보기</p>
         </a>
         <div className="commentDiv">
-          {comment.map(function (item, i) {
-            return <AddComment id="dog" item={item} key={i} />;
+          {commentList.map((list, i) => {
+            return <AddComment commentList={list} key={i} />;
+          })}
+          {comment.map(function (i) {
+            return (
+              <div className="newComment">
+                <a className="id" href="/">
+                  dog
+                </a>
+                <span>{i}</span>
+              </div>
+            );
           })}
         </div>
         <p className="time">3일 전</p>
@@ -109,9 +130,9 @@ function AddComment(props) {
   return (
     <div className="commentMsg">
       <a className="id" href="/">
-        {props.id}
+        {props.commentList.id}
       </a>
-      <span>{props.item}</span>
+      <span>{props.commentList.content}</span>
     </div>
   );
 }

@@ -16,7 +16,6 @@ function Comments() {
     let arr = [...commentArray];
     arr.unshift(comment);
     setCommentArray(arr);
-    console.log('clicked');
   }
 
   return (

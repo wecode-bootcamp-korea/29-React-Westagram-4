@@ -14,7 +14,7 @@ function Comments() {
   function uploadComment(event) {
     event.preventDefault();
     let arr = [...commentArray];
-    arr.unshift(comment);
+    arr.push(comment);
     setCommentArray(arr);
   }
 

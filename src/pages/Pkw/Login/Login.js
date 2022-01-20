@@ -30,14 +30,12 @@ function Login() {
           placeholder="전화번호, 사용자 이름 또는 이메일"
           value={userID}
           onChange={getID}
-          onKeyUp={validData}
         />
         <input
           type="password"
           placeholder="비밀번호"
           value={userPW}
           onChange={getPW}
-          onKeyUp={validData}
         />
         <button onClick={goToMain} disabled={!validData}>
           로그인

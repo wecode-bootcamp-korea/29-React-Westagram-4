@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Feed.scss';
 
-function Feed() {
+function Feed(props) {
   const [commentBtn, setCommentBtn] = useState(false);
   const [input, setInput] = useState('');
   const [comment, setComment] = useState([]);
@@ -25,7 +25,7 @@ function Feed() {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentData.json', {
+    fetch('http://localhost:3000/data/Jieun/commentData.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -53,7 +53,7 @@ function Feed() {
         </a>
       </div>
       <article>
-        <img className="feedImg" alt="img" src="images/Jieun/feed_1.jpg" />
+        <img className="feedImg" alt="img" src={props.feedList.img} />
       </article>
       <div className="feedPost">
         <div className="feedPostIcon">
@@ -73,16 +73,18 @@ function Feed() {
       </div>
       <div className="post">
         <a className="like" href="/">
-          좋아요 <span>3,225,835</span>개
+          좋아요 <span>{props.feedList.like}</span>개
         </a>
         <div className="content">
           <a className="id" href="/">
             hongseoli
           </a>
-          <span>미모 점검 중</span>
+          <span>{props.feedList.content}</span>
         </div>
         <a href="/">
-          <p className="commentMore">댓글 15,458개 모두 보기</p>
+          <p className="commentMore">
+            댓글 {props.feedList.comment}개 모두 보기
+          </p>
         </a>
         <div className="commentDiv">
           {commentList.map((list, i) => {

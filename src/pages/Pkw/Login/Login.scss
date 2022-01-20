@@ -51,12 +51,14 @@ input:focus {
 
         button {
             @include box_setting();
-            background-color: #7abcf7;
+            background-color: #7fc2fc;
             color: #ffffff;
             border: 1px solid  #c5e1fa;
-
-            &:hover {
-                cursor: pointer;
+            cursor: pointer;
+            
+            &:disabled {
+                background-color: #c5e1fa;
+                cursor: default;
             }
         }
 

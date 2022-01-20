@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 function Login() {
   const [userID, setUserID] = useState('');
   const [userPW, setUserPW] = useState('');
-  const [validData, setValidData] = useState(false);
+  const navigate = useNavigate();
 
   const getID = e => {
     setUserID(e.target.value);
@@ -15,15 +15,8 @@ function Login() {
     setUserPW(e.target.value);
   };
 
-  const validateData = () => {
-    if (userID.includes('@') && userPW.length > 4) {
-      setValidData(true);
-    } else {
-      setValidData(false);
-    }
-  };
+  const validData = userID.includes('@') && userPW.length > 4;
 
-  const navigate = useNavigate();
   const goToMain = () => {
     validData ? navigate('/pkw-main') : alert('잘못된 정보입니다.');
   };
@@ -37,16 +30,16 @@ function Login() {
           placeholder="전화번호, 사용자 이름 또는 이메일"
           value={userID}
           onChange={getID}
-          onKeyUp={validateData}
+          onKeyUp={validData}
         />
         <input
           type="password"
           placeholder="비밀번호"
           value={userPW}
           onChange={getPW}
-          onKeyUp={validateData}
+          onKeyUp={validData}
         />
-        <button onClick={goToMain} style={{ opacity: validData ? 1 : 0.3 }}>
+        <button onClick={goToMain} disabled={!validData}>
           로그인
         </button>
       </div>

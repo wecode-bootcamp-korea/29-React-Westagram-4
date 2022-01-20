@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Main.scss';
+import UploadComment from '../../Sumin/Main/UploadComment';
 
 function Comments() {
   const [comment, setComment] = useState('');
@@ -11,7 +12,7 @@ function Comments() {
     return comment.length > 0 ? setIsUploadBtn(true) : setIsUploadBtn(false);
   };
 
-  function uploadComment(event) {
+  function upload(event) {
     event.preventDefault();
     let arr = [...commentArray];
     arr.push(comment);
@@ -21,15 +22,8 @@ function Comments() {
   return (
     <div className="feed-comment">
       <ul className="comment-box">
-        {commentArray.map(input => {
-          return (
-            <li className="comment-list">
-              <div className="id-box">
-                <span className="your-name">임시아이디</span>
-                <span className="comment-text">{input}</span>
-              </div>
-            </li>
-          );
+        {commentArray.map(commentArray => {
+          return <UploadComment commentInput={commentArray} />;
         })}
       </ul>
       <form className="reply">
@@ -43,7 +37,7 @@ function Comments() {
         <button
           className={isUploadBtn ? 'btn-change' : 'reply-btn'}
           disabled={!isUploadBtn}
-          onClick={uploadComment}
+          onClick={upload}
         >
           게시
         </button>

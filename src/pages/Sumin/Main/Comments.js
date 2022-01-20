@@ -12,11 +12,16 @@ function Comments() {
     return comment.length > 0 ? setIsUploadBtn(true) : setIsUploadBtn(false);
   };
 
+  const resetInput = () => {
+    return setComment('');
+  };
+
   function upload(event) {
     event.preventDefault();
     let arr = [...commentArray];
     arr.push(comment);
     setCommentArray(arr);
+    resetInput();
   }
 
   return (
@@ -32,6 +37,7 @@ function Comments() {
           type="text"
           placeholder="댓글 달기..."
           onChange={handleCommentInput}
+          value={comment}
           onKeyUp={handleCommentInput}
         />
         <button

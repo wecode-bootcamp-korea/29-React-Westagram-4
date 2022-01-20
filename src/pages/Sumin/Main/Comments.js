@@ -4,7 +4,7 @@ import './Main.scss';
 function Comments() {
   const [comment, setComment] = useState('');
   const [isUploadBtn, setIsUploadBtn] = useState(false);
-  const [commentArray, seCommentArray] = useState([]);
+  const [commentArray, setCommentArray] = useState([]);
 
   const handleCommentInput = event => {
     setComment(event.target.value);
@@ -13,14 +13,26 @@ function Comments() {
 
   function uploadComment(event) {
     event.preventDefault();
+    let arr = [...commentArray];
+    arr.unshift(comment);
+    setCommentArray(arr);
     console.log('clicked');
   }
 
-  console.log(comment);
-
   return (
     <div className="feed-comment">
-      <ul className="comment-box"></ul>
+      <ul className="comment-box">
+        {commentArray.map(input => {
+          return (
+            <li className="comment-list">
+              <div className="id-box">
+                <span className="your-name">임시아이디</span>
+                <span className="comment-text">{input}</span>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
       <form className="reply">
         <input
           className="reply-input"

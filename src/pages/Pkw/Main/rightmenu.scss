@@ -21,11 +21,12 @@
         }
         
         .id-area {
-            @include flex-center();
+            display: flex;
+            align-items: start;            
             flex-direction: column;
             
             .my-name {
-                margin-left: -4px;
+                margin-top: 4px;
                 font-size: 14px;
                 color: #9b9b9b;
             }
@@ -61,7 +62,6 @@
             }
         }
         
-        
         .story-set {
             @include flex-center();
          
@@ -69,6 +69,7 @@
                 padding: 15px;
 
                 .story-time {
+                    margin-top: 4px;
                     display: flex;
                     color: #9b9b9b;
                 }
@@ -98,17 +99,18 @@
 
         .recommend-set {
             @include flex-center();
-        }
-        
-        .recommend-info {
-            padding: 15px;
-    
-            .followed-people {
-                display: flex;
-                color: #9b9b9b;
 
-                .ids {
-                    font-weight: normal;
+            .recommend-info {
+                padding: 15px;
+                
+                .followed-people {
+                    display: flex;
+                    color: #9b9b9b;
+                    margin-top: 4px;
+    
+                    .ids {
+                        font-weight: normal;
+                    }
                 }
             }
         }

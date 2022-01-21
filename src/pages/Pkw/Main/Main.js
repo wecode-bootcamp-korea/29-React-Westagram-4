@@ -1,8 +1,8 @@
 import React from 'react';
-import './Main.scss';
+import Nav from '../../../components/Nav/Nav';
 import Article from './Article';
 import RightMenu from './RightMenu';
-import Nav from '../../../components/Nav/Nav';
+import './Main.scss';
 
 function Main() {
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import './rightmenu.scss';
 
 function RightMenu() {
@@ -100,6 +101,7 @@ function RightMenu() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

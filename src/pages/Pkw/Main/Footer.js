@@ -1,17 +1,23 @@
+import React from 'react';
+import FooterList from './FooterList';
+import FooterData from './FooterData';
+import './Footer.scss';
+
 function Footer() {
   return (
-    <div>
-      Icons made by
-      <link
-        to="https://www.flaticon.com/authors/flatart-icons"
-        title="flatart_icons"
-      >
-        flatart_icons
-      </link>
-      <link to="https://www.flaticon.com/" title="Flaticon">
-        from www.flaticon.com
-      </link>
-    </div>
+    <ul className="footer">
+      {FooterData.map(data => {
+        return (
+          <FooterList
+            key={data.id}
+            type={data.type}
+            desc={data.desc}
+            link_text={data.link_text}
+            url={data.url}
+          />
+        );
+      })}
+    </ul>
   );
 }
 

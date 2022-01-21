@@ -1,0 +1,118 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-right {
+    @include flex-column();
+
+    .my-area {
+        @include flex-center();
+        margin-bottom: 11px;
+
+        .profile-img-l {
+            width: 60px;
+            margin-right: 10px;
+        }
+        
+        .id-area {
+            display: flex;
+            align-items: start;            
+            flex-direction: column;
+            
+            .my-name {
+                margin-top: 4px;
+                font-size: 14px;
+                color: #9b9b9b;
+            }
+        }
+    }
+
+@mixin right-box-setting {
+    margin-bottom: 15px;
+    padding: 15px 15px 3px 15px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+}
+
+@mixin right-box-title {
+    display: flex;
+    justify-content: space-between
+}
+
+    .story-area {
+        @include flex-column();
+        @include right-box-setting();
+    
+        .story-title {
+            @include right-box-title();
+            
+            span:nth-child(1) {
+                color: #9b9b9b;
+            }
+
+            span:nth-child(2) {
+                font-weight: bold;
+            }
+        }
+        
+        .story-set {
+            @include flex-center();
+         
+            .story-info {
+                padding: 15px;
+
+                .story-time {
+                    margin-top: 4px;
+                    display: flex;
+                    color: #9b9b9b;
+                }
+            }
+        }
+    }
+
+    .profile-img-m {
+        width: 45px;
+    }
+    
+    .recommendation-area {
+        @include flex-column();
+        @include right-box-setting();
+    
+        .recommend-title {
+            @include right-box-title();
+        
+            span:nth-child(1) {
+                color: #9b9b9b;
+            }
+        
+            span:nth-child(2) {
+                font-weight: bold;
+            }
+        }
+
+        .recommend-set {
+            @include flex-center();
+
+            .recommend-info {
+                padding: 15px;
+                
+                .followed-people {
+                    display: flex;
+                    color: #9b9b9b;
+                    margin-top: 4px;
+    
+                    .ids {
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}

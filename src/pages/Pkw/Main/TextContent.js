@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Comment from './Comment';
 
 function TextContent({ comments }) {
-  const commentList = comments.map((comment, idx) => (
+  const [pastComments, setPastComments] = useState([]);
+  const newCommentList = comments.map((comment, idx) => (
     <Comment key={idx} comment={comment} />
   ));
+
+  useEffect(() => {
+    fetch('http://localhost:3001/data/Pkw/pastComments.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setPastComments(data);
+      });
+  }, []);
+
+  const pastCommentList = pastComments.map(data => (
+    <Comment key={data.id} id={data.id} comment={data.comment} />
+  ));
+
   return (
     <div className="text-contents">
       <div className="liked-people">
@@ -27,13 +43,8 @@ function TextContent({ comments }) {
         </span>
         <span className="post-preview">술 줭</span>
       </div>
-      <div className="text-comments">
-        <span className="ids" id="">
-          hanjanjusio
-        </span>
-        <span className="comment-preview">돈 줭</span>
-      </div>
-      {commentList}
+      {pastCommentList}
+      {newCommentList}
       <div className="posted-time">
         <span className="time" id="posted-time-01">
           posted-time

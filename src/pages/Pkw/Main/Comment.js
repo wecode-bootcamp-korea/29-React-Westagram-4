@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Comment({ comment }) {
+function Comment({ id, comment }) {
   return (
     <div className="text-comments">
-      <span className="ids" id="">
-        healthy_liver
+      <span className="ids" id={id}>
+        {id ? id : 'liver'}
       </span>
       <span className="comment-preview">{comment}</span>
     </div>

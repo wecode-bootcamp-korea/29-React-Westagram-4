@@ -36,7 +36,7 @@ nav {
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: 30px;
-  color: #000000;    
+  color: #000000;
 }
 
 .nav-center {
@@ -52,10 +52,9 @@ nav {
   background-color: #fafafa;
 
   &::placeholder {
-      text-align: center;
+    text-align: center;
   }
 }
-
 
 #magnifier {
   width: 10px;
@@ -70,6 +69,6 @@ nav {
 .nav-right {
   @include flex-center();
   .icon {
-      margin-right: 10px;
+    margin-right: 10px;
   }
 }

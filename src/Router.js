@@ -1,4 +1,4 @@
-import { Route, Router } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import MainSumin from './pages/Sumin/Main/Main';
 import LoginSumin from './pages/Sumin/Login/Login';
@@ -9,18 +9,23 @@ import LoginJieun from './pages/Jieun/Login/Login';
 import MainPkw from './pages/Pkw/Main/Main';
 import LoginPkw from './pages/Pkw/Login/Login';
 
-<Router>
-  <Route path="/Main" element={<MainSumin />} />
-  <Route path="/Login" element={<LoginSumin />} />
+function Router() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/sumin" element={<LoginSumin />} />
+        <Route path="/sumin-main" element={<MainSumin />} />
 
-  <Route path="/Hwajong" element={<LoginHwajong />} />
-  <Route path="/Hwajong" element={<MainHwajong />} />
+        <Route path="/hwajong" element={<LoginHwajong />} />
+        <Route path="/hwajong-main" element={<MainHwajong />} />
 
-  <Route path="/Jieun" element={<LoginJieun />} />
-  <Route path="/Jieun" element={<MainJieun />} />
+        <Route path="/jieun" element={<LoginJieun />} />
+        <Route path="/jieun-main" element={<MainJieun />} />
 
-  <Route path="/Pkw" element={<LoginPkw />} />
-  <Route path="/Pkw" element={<MainPkw />} />
-</Router>;
-
+        <Route path="/pkw" element={<LoginPkw />} />
+        <Route path="/pkw-main" element={<MainPkw />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 export default Router;
